@@ -68,11 +68,22 @@ const showNextPage = () => {
 };
 
 // Get the document
-pdfjsLib.getDocument(url).promise.then((pdfDoc_) => {
-  document.querySelector("#page-count").textContent = pdfDoc.numPages;
+pdfjsLib
+  .getDocument(url)
+  .promise.then((pdfDoc_) => {
+    document.querySelector("#page-count").textContent = pdfDoc.numPages;
 
-  renderPage(pageNum);
-});
+    renderPage(pageNum);
+  })
+  .catch((err) => {
+    const errorDiv = document.createElement("div");
+    errorDiv.className = "error";
+    errorDiv.appendChild(document.createTextNode(err.message));
+    document.querySelector("body").insertBefore(div, canvas);
+
+    //Remove the top bar
+    document.querySelector(".top-bar").style.display = "none";
+  });
 
 //Button events
 const prevPageBtn = document.querySelector("#prev-page");
