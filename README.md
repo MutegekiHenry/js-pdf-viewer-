@@ -5,7 +5,8 @@ This is a PDF viewer that uses the package built by [Mozilla Foundation PDFjs](h
 # Local Set up
 
 ```
-git clone https://github.com/morelmiles/js-pdf-viewer.git
+git clone
+ https://github.com/morelmiles/js-pdf-viewer-.git
 ```
 
 Happy hacking!
