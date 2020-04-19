@@ -67,4 +67,18 @@ const showNextPage = () => {
   queueRenderPage(pageNum);
 };
 
-//
+// Get the document
+pdfjsLib.getDocument(url).promise.then((pdfDoc_) => {
+  document.querySelector("#page-count").textContent = pdfDoc.numPages;
+
+  renderPage(pageNum);
+});
+
+//Button events
+const prevPageBtn = document.querySelector("#prev-page");
+const nextPageBtn = document.querySelector("#next-page");
+
+//Listen to the events
+prevPageBtn.onclick = showPrevPage;
+
+nextPageBtn.onclick = showNextPage;
