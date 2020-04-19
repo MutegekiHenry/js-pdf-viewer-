@@ -56,3 +56,15 @@ const showPrevPage = () => {
   pageNum--;
   queueRenderPage(num);
 };
+
+//Show the next page
+const showNextPage = () => {
+  if (pageNum >= pdfDoc.numPages) {
+    return;
+  }
+  pageNum++;
+
+  queueRenderPage(pageNum);
+};
+
+//
