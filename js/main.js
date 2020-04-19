@@ -48,4 +48,11 @@ const queueRenderPage = (num) => {
   }
 };
 
-/
+//Show the previous page
+const showPrevPage = () => {
+  if (pageNum <= 1) {
+    return;
+  }
+  pageNum--;
+  queueRenderPage(num);
+};
