@@ -38,3 +38,14 @@ const renderPage = (num) => {
     document.querySelector("#page-num").textContent = num;
   });
 };
+
+//Check for the pages that are rendering
+const queueRenderPage = (num) => {
+  if (pageIsRendering) {
+    pageNumIsPending = num;
+  } else {
+    renderPage(num);
+  }
+};
+
+/
